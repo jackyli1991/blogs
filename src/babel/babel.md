@@ -66,7 +66,7 @@ presets: [['@babel/preset-env', {}]]
 
 ## @babel/polyfill
 
-`babel7.4.0+已废弃使用`，取而代之的，推荐在项目中直接使用用：
+`babel7.4.0+已废弃使用`，取而代之的，推荐在项目中直接使用：
 
 ```js
 import 'core-js/stable'
