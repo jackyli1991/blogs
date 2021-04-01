@@ -99,9 +99,10 @@ const animateCSS = (element, animation, prefix = 'animate__') => {
 ## 注意的地方
 
 - 不能对行内元素使用动画，请先设置`display: inline-block`
-- 大多数动画会超出屏幕视图区域，可能式父元素产生滚动条，请为父元素设置`overflow: hidden`
-- 单靠css实现不了动画重复播放之间的间隔时间，需要借助JavaScript的编程能力
+- 大多数动画会超出屏幕视图区域，可能使父元素产生滚动条，请为父元素设置`overflow: hidden`
+- 单靠css实现不了动画重复播放时的间隔时间，需要借助JavaScript的编程能力
 - 明确动画类型的具体使用场景，避免滥用
-- 避免在大的html元素上使用
-- 避免在跟元素上使用
+- 避免在大的html元素上
+- 使用
+- 避免在根元素上使用
 - 避免无限循环动画
