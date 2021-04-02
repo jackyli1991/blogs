@@ -2,9 +2,7 @@
 
 修改/美化控制台的输出内容的样式。
 
-
-
-安装与起步：
+##  安装与起步
 
 ```javascript
 npm install chalk
