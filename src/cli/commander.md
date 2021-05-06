@@ -43,8 +43,6 @@ const program = new Command()
   ```javascript
   program
     .option('-m|--model <modeType>', 'specify a mode type')
-    .parse()
-  program
     .requiredOption('-m|--model <modelType>', 'specify a mode type', 'default value')
     .parse()
   
@@ -59,10 +57,10 @@ const program = new Command()
   - 可选参数选项，使用方括号`[ ]`：
   
   ```javascript
-	program
-	  .option('-m|--model [modeType]', 'specify a mode type')
-    .parse()
-  
+  program
+    .option('-m|--model [modeType]', 'specify a mode type')
+	  .parse()
+	
   // 不传入参数时值为true，传入参数时值为传入的参数
   - mcp -m // { model: true }
   - mcp -m freedom // { model: 'freedom' }
@@ -134,6 +132,7 @@ const program = new Command()
     .action((name, options, command) => {
       // 处理函数
     })
+  ```
 ```
 
 
@@ -144,7 +143,7 @@ const program = new Command()
 
   命令声明的所有参数作为处理函数的参数依次传入。同时处理函数还支持两个额外参数：一个是解析出的选项，一个是该命令对象自身
 
-```javascript
+​```javascript
 program
   .arguments('<name> [addr]')
   .action((name, addr, options, command) => {
@@ -195,3 +194,10 @@ program
   - node：默认，`argv[0]`是应用，`argv[1]`是要跑的脚本，后续为用户参数
   - electron：`argv[1]`根据 electron 应用是否打包而变化
   - user：来自用户的所有参数
+
+- 确保在最后调用，并且只调用一次
+
+```javascript
+program.parse()
+```
+
